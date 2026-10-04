@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parth Rai | Student Developer</title>
+<meta name="description" content="Portfolio of Parth Rai — 14-year-old student of Sunbeam School, Python programmer and AI builder.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{--bg:#050816;--card:rgba(255,255,255,.055);--border:rgba(255,255,255,.10);--text:#f7f9ff;--muted:#aab2ca;--blue:#5b8cff;--cyan:#38e8ff;--purple:#9c6cff}
+body{font-family:Inter,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(circle at 15% 20%,rgba(91,140,255,.15),transparent 28%),radial-gradient(circle at 85% 60%,rgba(156,108,255,.12),transparent 30%),var(--bg);color:var(--text);line-height:1.6}
+a{color:inherit;text-decoration:none}
+section{padding:100px 8%;scroll-margin-top:70px}
+.section-title{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:15px}
+.section-subtitle{color:var(--muted);max-width:700px;margin-bottom:45px}
+.gradient-text{background:linear-gradient(90deg,var(--cyan),var(--blue),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{position:fixed;width:100%;top:0;z-index:1000;display:flex;align-items:center;justify-content:space-between;padding:18px 8%;background:rgba(5,8,22,.78);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow .3s}
+.logo{font-size:1.35rem;font-weight:800;letter-spacing:1px}
+.logo span{color:var(--cyan)}
+nav ul{list-style:none;display:flex;gap:28px}
+nav a:hover{color:var(--cyan)}
+.menu-btn{display:none;font-size:25px;cursor:pointer;background:none;border:0;color:var(--text)}
+.hero{min-height:100vh;display:flex;align-items:center;padding-top:120px}
+.hero-content{max-width:900px}
+.badge{display:inline-block;padding:8px 15px;margin-bottom:25px;border-radius:30px;color:var(--cyan);border:1px solid rgba(56,232,255,.35);background:rgba(56,232,255,.07)}
+.hero h1{font-size:clamp(3.5rem,10vw,7rem);line-height:.95;letter-spacing:-4px;margin-bottom:25px}
+.hero h2{font-size:clamp(1.2rem,3vw,2rem);margin-bottom:20px;color:#d8def0}
+.hero p{max-width:720px;color:var(--muted);font-size:1.1rem;margin-bottom:35px}
+.buttons{display:flex;gap:15px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 22px;border-radius:10px;font-weight:700;border:1px solid var(--border);transition:.25s}
+.primary{color:#02040b;background:linear-gradient(90deg,var(--cyan),var(--blue))}
+.secondary{background:rgba(255,255,255,.04)}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(56,232,255,.12)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:45px}
+.about-text p{color:var(--muted);margin-bottom:18px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.stat{padding:25px;background:var(--card);border:1px solid var(--border);border-radius:18px}
+.stat h3{color:var(--cyan);font-size:1.7rem}
+.stat p{color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:12px}
+.skill{padding:11px 17px;border:1px solid var(--border);border-radius:30px;color:#dce4ff;background:rgba(255,255,255,.04);transition:.25s}
+.skill:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-3px)}
+.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.project{min-height:370px;padding:28px;border-radius:22px;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--border);display:flex;flex-direction:column;transition:.3s}
+.project:hover{transform:translateY(-8px);border-color:rgba(56,232,255,.4)}
+.project-number{color:var(--cyan);font-weight:bold;margin-bottom:35px}
+.project h3{font-size:1.6rem;margin-bottom:13px}
+.project p{color:var(--muted);flex:1}
+.tech{margin-top:25px;display:flex;flex-wrap:wrap;gap:8px}
+.tech span{font-size:.8rem;padding:6px 10px;background:rgba(91,140,255,.12);border-radius:20px;color:#a9c0ff}
+.plinks{margin-top:18px}
+.plinks a{color:var(--cyan);font-weight:600;font-size:.9rem;margin-right:16px}
+.plinks a:hover{text-decoration:underline}
+.journey{border-left:2px solid rgba(56,232,255,.35);padding-left:30px;max-width:850px}
+.journey-item{margin-bottom:40px;position:relative}
+.journey-item::before{content:"";width:13px;height:13px;background:var(--cyan);border-radius:50%;position:absolute;left:-37px;top:7px;box-shadow:0 0 15px var(--cyan)}
+.journey-item h3{margin-bottom:8px}
+.journey-item p{color:var(--muted)}
+.contact-box{max-width:850px;padding:45px;border-radius:25px;border:1px solid var(--border);background:var(--card)}
+.contact-box p{color:var(--muted);margin:15px 0 25px}
+footer{text-align:center;padding:35px;color:var(--muted);border-top:1px solid var(--border)}
+.dl-box{display:grid;grid-template-columns:1.3fr 1fr;gap:30px;padding:40px;border-radius:25px;border:1px solid var(--border);background:var(--card)}
+.dl-box h3{font-size:1.8rem;margin-bottom:10px}
+.dl-box p{color:var(--muted);margin-bottom:20px}
+.dl-meta{list-style:none;color:var(--muted);font-size:.95rem}
+.dl-meta li{padding:8px 0;border-bottom:1px solid var(--border)}
+.dl-meta b{color:var(--text)}
+.hash{word-break:break-all;font-family:monospace;font-size:.78rem}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-bottom:40px;counter-reset:s}
+.ai-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.ai-grid .stat h3{font-size:1.25rem;margin-bottom:6px}
+.step{padding:24px;border-radius:18px;background:var(--card);border:1px solid var(--border);counter-increment:s}
+.step::before{content:counter(s);display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:linear-gradient(90deg,var(--cyan),var(--blue));color:#02040b;font-weight:800;margin-bottom:12px}
+.step h4{margin-bottom:6px}
+.step p{color:var(--muted);font-size:.95rem}
+.manual h3{margin:10px 0 14px;font-size:1.4rem}
+details{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px 20px;margin-bottom:12px}
+summary{cursor:pointer;font-weight:700}
+details p,details li{color:var(--muted);margin-top:10px}
+details ul{padding-left:20px}
+code{background:rgba(91,140,255,.15);color:#a9c0ff;padding:2px 8px;border-radius:6px;font-size:.9rem}
+.note{margin-top:20px;font-size:.9rem;color:var(--muted)}
+@media(max-width:900px){.dl-box{grid-template-columns:1fr;padding:26px}}
+nav a[href="#ai"]{color:var(--cyan);font-weight:700;text-shadow:0 0 12px rgba(56,232,255,.6)}
+.hl{background:linear-gradient(90deg,var(--cyan),var(--purple));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
+.skill.ai{border-color:var(--cyan);color:#02040b;background:linear-gradient(90deg,var(--cyan),var(--blue));font-weight:700;box-shadow:0 0 18px rgba(56,232,255,.35)}
+.skill.ai:hover{color:#02040b;box-shadow:0 0 28px rgba(56,232,255,.6)}
+.ai-wrap{position:relative;padding:38px;border-radius:28px;border:1px solid rgba(56,232,255,.5);background:radial-gradient(circle at 80% 0,rgba(156,108,255,.22),transparent 45%),radial-gradient(circle at 0 100%,rgba(56,232,255,.18),transparent 45%),rgba(255,255,255,.04);box-shadow:0 0 70px rgba(56,232,255,.18),inset 0 0 40px rgba(91,140,255,.08);animation:glow 3.5s ease-in-out infinite}
+.ai-tag{display:inline-block;padding:6px 14px;margin-bottom:16px;border-radius:30px;font-size:.8rem;font-weight:800;letter-spacing:1px;color:#02040b;background:linear-gradient(90deg,var(--cyan),var(--purple))}
+.ai-wrap .stat{border-color:rgba(56,232,255,.35);background:rgba(5,8,22,.55)}
+@keyframes glow{50%{box-shadow:0 0 100px rgba(156,108,255,.3),inset 0 0 40px rgba(91,140,255,.12)}}
+.btn,.skill,.stat,.project,.step{position:relative;overflow:hidden}
+.btn:active,.skill:active,.stat:active,.project:active,.step:active{transform:scale(.96)}
+.ripple{position:absolute;border-radius:50%;background:rgba(56,232,255,.45);transform:scale(0);animation:rip .6s ease-out;pointer-events:none}
+@keyframes rip{to{transform:scale(4);opacity:0}}
+.ring{position:fixed;width:14px;height:14px;margin:-7px 0 0 -7px;border:2px solid var(--cyan);border-radius:50%;pointer-events:none;z-index:2000;animation:ring .6s ease-out forwards}
+@keyframes ring{to{transform:scale(4.5);opacity:0}}
+@media(prefers-reduced-motion:reduce){.ai-wrap{animation:none}.ripple,.ring{display:none}}
+@media(max-width:700px){.ai-wrap{padding:22px}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}
+.reveal.show{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media(max-width:900px){.projects-grid,.about-grid{grid-template-columns:1fr}}
+@media(max-width:700px){
+nav ul{display:none;position:absolute;top:70px;right:5%;width:220px;padding:20px;flex-direction:column;background:#0a1024;border:1px solid var(--border);border-radius:15px}
+nav ul.active{display:flex}
+.menu-btn{display:block}
+section{padding:80px 6%}
+.hero h1{letter-spacing:-2px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">PARTH<span>.</span></div>
+  <ul id="menu">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#ai">AI</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#download">Download</a></li>
+    <li><a href="#manual">How to Use</a></li>
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+</nav>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="badge">● 14-Year-Old Student of Sunbeam School</div>
+    <h1>PARTH <span class="gradient-text">RAI</span></h1>
+    <h2>Python Programmer • <span class="hl">AI &amp; Software Builder</span> • Web Developer</h2>
+    <p>I am a 14-year-old student of Sunbeam School who enjoys turning ideas into working software, and I am skilled at AI prompting and building with AI. I build Python applications, AI-assistant projects, web experiences and experimental desktop interfaces while continuously learning new technologies.</p>
+    <div class="buttons">
+      <a class="btn primary" href="#projects">Explore My Projects</a>
+      <a class="btn secondary" href="#about">About Me</a>
+      <a class="btn secondary" href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOSAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA4IDAgUiAvUmVzb3VyY2VzIDw8Ci9FeHRHU3RhdGUgPDwKL2dSTHMwIDw8Ci9jYSAuMwo+PiAvZ1JMczEgPDwKL2NhIDEKPj4gL2dSTHMyIDw8Ci9jYSAuMgo+Pgo+PiAvRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTAgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgOCAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovUGFnZU1vZGUgL1VzZU5vbmUgL1BhZ2VzIDggMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9BdXRob3IgKFBhcnRoIFJhaSkgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MTAwNDE0NDYxOSswMCcwMCcpIC9DcmVhdG9yIChcKHVuc3BlY2lmaWVkXCkpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MTAwNDE0NDYxOSswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0IChcKHVuc3BlY2lmaWVkXCkpIC9UaXRsZSAoUGFydGggUmFpIC0gUmVzdW1lKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0NvdW50IDIgL0tpZHMgWyA0IDAgUiA1IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOSAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAzNjY5Cj4+CnN0cmVhbQpHYiFTbj5CY1EtJnE4SDlXMkRmODM+JXRMREQjay5mTGk2KENqQDpyOVs5JUJOM0deLzVVMkBSaE5LJXJlST0+YFAmM2FTLzJLbGFmSG1KcllIJUhibDNkVjVydD4uYD9OSWZaaVVwQ1ZfdVROSSNoJ1gjQGkyZWo1QzhobypKOWBQbC5pXVYicl5wJz09LmkiXWJrKjcvUEJUXjo0WUszMUchREYxJUJEQkBCXidycDZWQD9cUzdOSTFzUilzNWEyISZsYyF0OWxFRWcrRVIvMG1BaVBlT1tWZmZmYEYpW1pSP2c8OkF0WDBLZGsvSDxMTiY1N1xkPW5cKVJnMFZQNSUxUDNMXUBRXVRQIkxDVVJyPzhsSSNiYmkqPzZhQztTSUQvK10kQUVnWnBcQV10PjkmZlQwO2JFbyw9LjhqMHEpbzwnO2hVNmJgWEwhZTVudChYSmwzKmk3anNEQ0tlJEU3JUZgPmw8Ji1wI2w4VGNOYnIqTjE2ZCkzbWMjIWZIam49bz1FPXVRUDNoX2d0LCM0VUYyKzxlKzIhPVV0YlZYMV1pIWJob1A/T0Y6bkIuMTRUWEUybyx1XF1KSE00VypkNHBHZWw4SVI1TmlmWU5VMTUqQDFDWEZbI0FYZ207XFciTlpBPjhxQzBHJDFMbEljTVRga3BEVG1cS0k4cVAxRzw3bjw7NzFJS2JQWj0wOjclKHNlUGciNSs3TkhsVmU3Oj0pLEV0NlM0WEtXRmF0ImM6PUB1Iy9pIzUsK2FKNloiJ0AmITApXEVxKjBKUFxUTiYlSlxiSkR0QnEvYG9RQGhMZUcjVSJGJk5CITErZSM/Z2codV5hPTNbVlJyKltqYUpVcFBvclVMWFh0RXNsY1tlNzpTWVw1VypjIlJWSVw8RFAnaVEpNl1sMS4idHAlYFtjZkNHQU1mZTVgYD1EQCskRVthUyhXIVIzO0xgbXNySShjayRBQChdQjtdUWkpKUg8Xl00bSRQLHVtW007M3E5dExiT2Y8SD1gUVRzJShvPSNORDYtUTRgWTlIPktCb1x1akQkQWtjaTRJQkI1aT40MC0nVltWTTNZbkJoMVFQOHVANTw/JW11RDghMF1jOGdqblZFWHVPL1s9Izg2MWtSc1NVT2QjciVbJCRoZmxlRlQpNFVtKTYnU0knJURXZDFYMmYlRWAsTitVKClxMiIuXHFcL3IhUixZRD4pbXJKRFArW0JPNilXMHQ9Mj5lRDM4QWVfaGpbMituXiROP2czR2FFUS42QS5jdCdoISciTDNRJmpBK2JRTm0wZCtNOiZrZ2ZLKiNVZ25hVysvYEFuLGViWyQ+Zm0nU04wLTpfTFA2PFFRR1RTaHBoMSRhIXI+Q2VPLlEjcVskMzdqYUtqUHRXPyFnKGlvT0drbyRhbW0pR3UjJENyMyZBSEgpQyNGWXBAZ0tKJXEtNUtBOktbWUdFJXBaVGBiLXVIWUtxcmkva2stPW0vJDp0RSxZaWFlKzpbbD5nKT5MZlJUMilaJldMaCVGLj9UQFVcOkBxTkRgPCovQ1FgRiFZKzgkQ0BVLC1ZR2VqMEgvOFxsbEVOakE1b21bVFpoUWdRS0JgLGJgVD08bXRNOzxpKHA1VTtpZ1lSMWRsIkgvNDljYCwuN3BoP3UnRCgrLTZSYjNjIy8oTmROQENmZiRQTl1HOFpnQVdmRzcpcm5CdV1hNVRROideMyNFblM1Rm8oRyJUQmJcbFxZQ1IuSElXKHM4KEtmSCUvOTBBRCU0ZmdLb1IsIlkpZidBVS9aR2tBcyUyZ0BWKHVJMERsWCc1WFZTbmNsc29kLCpiLiQ2OWRmRCxLOFlaOGpndF50TS0yP3IqPFNpZy0hNm1DcUYsbWwlMC9GOSlabnQ4U0dZWig5LFxKTWNpKyNoYEQwXG5kV1I/aGIsV2ZWP2Y5M0FLOkU2QHBcVDo0XykiQEtITVRaKWpQN0VjW3QyQDhkYCRVKGM9WDFUPUVZTEVuX1VuUEIpWCxeQjxBc2dyWTFgLyUtQSs5LE9zLkVgTTNAbVNrZ3QtMUgwVUZJTjIkIzlTQUBJWjVoWjMwWz9cYVpWX0VyOjZyaDcqPGM/U1ZMYj9qaVwxYnBPVWdcKEhiLiUjPVssUlUzT2krP10jZ1whRDNoOTlbYjdBMWpPMWtqKkpNM3EiLUwnUHJGSGchPjJlYG5dP1ZKSC82SUlxWEImWGk6S250dE8kOFI2SCFgVTFcbUBhRjp1PDNGJT1QX3FVQiFrSWMvRk1VW2BpIz1KO2NZcVloXjlDMlpxam9sMXNGTzRGLVxjalZgX3BQQlJWWkhCWUddPWtoWyEtS0U2UykyJiYlQEM/azMyQXBdPG00K3AsYlc+a1o5dUFnWmlYQ1RjbGopalgnZVo4TixeX1ZkcURMPWhqUENEPWtRYitiZy1JYmBxJlRYZCNXcDZpbGVjciQwR2dfIiVsVUM0PzghZTxcL2UydWFta1dsMGMtRXAhV2oyRGhCaiFwbmtHcytYOjlpaGlKNkI6RWNpTmAtL0hcPWFpOXVuSHMvX1IiVEMkdEU0WCFWa00pSixVJE8qRFQtai4wSnBFXzBSaFQySGtcU25PNVkqaTVwaU1AUDVZc05MRVNKZDBgM2JUMyZPKDNcTEpzVD0zWjlxK0hJPk1bXEs4R3VyWi1VKjBVMU4nLkNBY1pNMCpnZkAyYnFXQ3FJVV4hJDZfMlFqNz84QlNXWFhYbWZKNFpYIytjcDsqUG9JSVBjNlxWWTlqUFU9ZSs+PUA8Lj5YXDNFbjF1VVM4UGBlXDIqa2ZAUlVtV1pQT0ckLzRhaSohKE47ckFLTSYvZEViIy46QmAtKVdUZWFkI1w2MldMQVM8RFFpJ1pyRDBdVmUyRUslWDY4ckhWQyo/cGs2Vi07W0lIKWc7bmk8dT9KPnUmWSkzJWhgVkc2XDdVJkQnIzVPJzo0b0ZRKWUiIlZPXFhgcSJoSS5yaCdcO19LW2M7NiFBdEpWWDBRSiZGZ1VUMSFga01oQ1pfKDNcJEhebC5DTmxzLmRiQFYmU3BtX20hWjJbTUJHRVpbKS4xXTBOaThFSUJEKCt1Jy9BRHFDaExZLUkkQjstZVoiUEFwT19VOiYzaWJLOyFXYCNwQVdoXWBLVzNYM0dgXnVDR19CQEI4OiovUmRTNCZcWW80NzF0Imh0aFAxKFA1XCtUQGxuNjwqWkViK0QyNl8xMVJoRlY+bklGXkZJNyJyRT9pT0RPPXJdSDpSPGVVMzwrX1onT2xuLmpgOidoQkVyYTErU05bZDc+LmMlUjc3TDpdIT5Na0RJbWBFI1VEa2lfbmw1S3Q3RStBXitdazZMZE5MdURzJHBYOmczKC5PaT5Zb0w7TlFmMkJrNFtPSDI4ci1TKkhfbj9gWXUuXTJNPEU1aS5MVlpzJHFxMUosTGs3VzBTNC1bZTVDbC8kRjxsdTRnJE1rbz4mOSU0X3VmUWRjPVksMHBvJWZuPmM3aGJhaipDN1EmcVtSU2xxZUFXZGhPYDFyLz8jaVZTWlAqYVk1XD8uYl1YQ2EkLDczXWBeLk5tVVBfJkMwKnFCS1NrPT9ZNlUwXGpYaCIvXWRgVE9pTD4vUnQnRHBmWzVrTlMrJz9MSUY9LFc6RiVBNE5wYVw3Iz5uOlpETCo/JkVAalFpJFcyK2RaIS9tVjciU2Q5dTtSITJzM2BcYDdzN2RdcSxfWyE5XTo3X2MtO3Q6MCplJys2XGNSMEZVVVhXSUZDXilXPGBFUl1UTipUZUNqREROUXNNVE81VScvNmI4RDR0KiJ0TCphIm5lNmdZIyYrcGxGPFI3bl1ZZipgWGU7RWBwclkmVmxeXXRjMS51N0EuZTg+SSk4SD47RFI+L2oiSV5MWVVnLVItKT5nUjssXiNKVk1WI1BsdHJAalxWKyw0MjExPERKMyJzbk9Sbi08QVtdUVlOUmtHbCQkUSFdOmszVy9lSWdEQUwsQkxBS1pjTENgMWwtQGExPWhHYz1AJTF0Nj5gc0cnbzNJQihxTmJWLkUxIVBEQjUpIiUuaTg7KSc3Vk5VVSFSRjRjL2xuLnE7akg6N19PbCReVnU4LEMnMSVLciFKV2o8WiNCZkNDO3Q2UkVXT15RJ0dFJl5QWy9WYkdBbFVvMj5JLnBeJS9SaUV1bC1obGskNVVrImVLZ1VaUGJMLnE5NzAhOFwqbEhrTkMqVnFRKmw7IiwyLiU+RDlOOV0jSypWLmBNQlE0NjFJJ0ErJTk6ZnRSYEhwQk1dKCYtMSpsOjRDck4qMkhaXyNRaj1yKk1lUE0vKj1IUSIscGNmI1U+OCtRRSVdKm5KZkI/XitaNVQ6dU9nWHFBY2RQL0MwMklFImU1RjQoQFxkWVVPQ1FSXVY/OFV0NlgwZCFnVHBkXDBlZ0pfamY0P1MmWDk2IVsvL01ALi5DYTgyUWI0czZtVUAsSEA+Im9xMzRDaFNQaSc0T0olcU8zTS8kWjY1IVRDUXBVYzJ1aXI7MHFoM1Y8WmtJWSRbVmZvW2pRSlRYKT9ySFguQj5uSyMwWVMmVjhNIyR1aSYiNy9jWVt1JDgkNUBWIiJvcSRCRExpaSRjbm44VEEvckViQDVOPlhyZTNDK0UoY2FiPEdaKTJKW2JOVDNFKWFsL19EV0drSztXcClpJk5RP0BtZD8hSlBSPyxsZSwyN1VbcyhPUG84VTNXQycsRlpDLWMqVHEyTEhVIUdBVEVpLSVAcXVETE82VSxFU1cvPS05JidiRmhQbyE/ZUguJyg3VjE0cSlAUFhlX0tlI0UhZ1c0WjNmNmRealxoREhUWk9TYFYqKCVodEQ/XTE5UzwpPk9MZDclSyNWWUVKXFNfSDxmXDQlazxAMWE4fj5lbmRzdHJlYW0KZW5kb2JqCjEwIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI5MTUKPj4Kc3RyZWFtCkdiIWwhaC9oUjgmcUE1N2Q4KmohPGhjb09xLm5sVEtVWkQxLFJjQGdHPytQIkowOkVlUyRidHI8OTkxVVFLNkEiSzJdWm5BYV51KyJDIUpOVm4uQDA2YyRQW1dkYDhRISQ+aEJcJWJrNy1IcWNAM1QyWTJfLWhIVnFaU15BQjJUXClAQ2BQX0pQXStAQG1kbz8jXVswMWZ1Lj44I0tzSDBrdV1pX01yNmEuJi47Vj5GP3JVY2ZuS21RMUhhOklhS3AiOSxNXHJYQHFAR24qKTNQZzFQJkZNKiRdJkIqJ1U5ZyptPms7Q1o0aDoyJGwtV1F1L0tUbVNAR2VAKyQucidrWj8zcDYyIjYqN1RSQzVbNmRIX15aJ0NcQVY4Yk4rTlBQMHB1Zi0lXEAwT2BGPjsoKCpaSDI3UWNOTVprWT0yJGMlIlo1Ijs3QmZINytYaG8lbF4jZkRlVTZzQ1JDKiInVkAqR3VVWDB1LFcmbTVXVEVOSEVbOyJaYWpyYE9PMVtmLygxNy5zIl1BOGRwcDotSjcpdVkycURJIVU0PCYzWWtILWQ2T1IxSEFcSE9EO2xJbT4mWWQrMTE8PDUpKCpMOClpZS5ET3FVR0skUjg2YjxMSURIK1xKTS42ZVQsZ2ljbD9gT2RYYGwiZlJcQjYlWDo1bFlGVi1BL0tVR2EtJ2VKNEx0SlNcPVM4Zi5jMHUhMUtNPzhvZUtTOClrdEAhUGdROjA7RFg0Xjk2J3Bvbiw2J1BgaW5UTVw7bkVSJkxXI0c3JXFBXU8ybDg0Py1MZEgrdXNOZichbEUrQWpAcC9PW0o0Yi5XU1pzVUEkWHQjMS9NLywyJ11HaC5TQFlSPllwTmk5ZFgySWdlWEUsTjZbTyY/Xm5xZHVzN1Y9QiZFME5Qc21CYTkyNFE0KkU1IiJZWigkLjEsa3BMZCxpZyJXUTYwZy0vX1grJzwnQ0Q/OChFXy00VzhRaClxWEwzX1VWSVphaCpsQSk9aiowJV1AKEhANkYkXW5GQFAmNWwlZGcxLFJMaWBOQDYrR2FJakt1S0wlbiI+Z2dtTERFLTNzaTgyVUQtai5zSUFrM3VrNUQmV2NuNFRLZS5INUtCUHJhbCckYDlQViFgcC9GJGEwPFY1JmpDLFNdb3I3PyhLQU5mXUVLa2krU1RTdFk+QGxpLEMrREleRzZiRVo1anAzQSsrYzIzLjVfbjRCR0NhIkolNmAqJEhiYCJmR21nLSg2Uz9uK0BeOGZxZ2pYUXE1YD1uNnAjIixgMWFbY2hSQFloUnA4LE8kMTpBYTI7PWRFa0I5WyI/TE0iLD0qW3VJTidxYy0/USNDJj1pITBhaDhRPkdhOkQ/NklqSlZHUkxAPy9pTW9udS5SOy1kUGdzT0JRY3A0UD9KMitVNkF0dSExX08xWllHLjc+NEB1ZlJQcGNmUzNoWzZbWCFqZzNvYk5lT1ovWnRHNCFzYkIwRkk3SyNqY1ZAJ0VrS3RXMFEqcmEhO1p0NUdHQSgiPTlbUFtqLVBKZkApMkpycDJsRmRzMnBMNDVjZ0FVKDVgWTNqKXVPVlwzJ2VMRW9EWlUtTz0zOUNeSE4vYidgdC9FOTpQLzRFbz9ITi1GcG5Fa1xxTzIyOVEpcFVZR3Mxc0dIY0dkVTVxU184XV0xdDZWOlAnRiQsPUpQPykxMzkuOFsuSV1NPmVjblUiblIwOFVpP0NDX21WckYyMmJYNTZXUEAoRWhCWVdTJS47NVIhUkVQQj1RJyJxQCImbmJiRiokIXAvc1FgQjdoQ3Q3Oyg1cGw5PmE6N2lJKUpwKFlEbW5qbkhsQWdYLEFOZjwzMG5na2lHZCxFK0lwI2dQWDtoMF9jNjo4ZVMkUSdXbCtXJEZaP3JNOU1jSkIlXyhLT25Fc2UlOWRqUmxZbTsuJDpoJTx1JnErWF8vWCk3Sy5GZVZbNlpZNkJgTEFfWT5GMmNYWXRHKUtvZ2xrTSxLI11NUDNWRFs8Umt1VUBgO1coVD5HWi4qTVJBSUEyMWVkaGtgTV9FP1dYNjJZJVAsSTcwZnA4N2MvQ2dhVW1pPk45Y1VmYy9WPVVmIktvL2xkPm8tJztGPys4XTEyaUYqUCgoXDVEbk80LXFENUpxWzNMTERMbUhWNU1KWmJSO1YhXCZMQ01kMSc5cjFTSk1MIVprKilcaE8uNTE5ZyMrWVw2TycjPVA8XDcyRElfOiRAdCZaWmNWP0dJbVM3L0BuIU8rPV9haFdLWTltRWhSYTQxPlUoMlxWUltsNS8nOVZpZzFWLk5xPWhYQSlhbHE5ITcoJjk+bjxMLFhgXz9LKztgYC5cVzlPJFMmZlBvX0cnPS1ISU9qdE9EJlJrVG1gazdTKTJQVCYlI3FIa05aJSlRIVUkNShtcUB1XiVFMFttSWVqI1sqQ0pzai09QDJsYWIrN19zJ0pRKlxIP2UrQk4xVWxOWWxINy0zOU9gIU4zNHM0aEUkOVVTayhcJVBVTkY2Y1YtR21wTUhsZURxT1lBPV5kUSpwOT02JT8mQTtwb0RwLVBmInNbNFxTJG8jLS9yLEBTQFtNRj9sUm1zTlJwcm5FWGhtKzxEQ2wkXkhINWNVQTVxNkcqVVYrLy9sJ3ElPnFeTVZTJDFIQmckbyIvRktUI1MsQzAyN1o5UFtyOS9kUEQ/NSw+RVdqa2NJaUlnVlkwVihGO2hIIkJqZ25RNGkhN1s0YDxYTy4rTT8hcjNeXFNiRGY7ajZsXF8wJzclUyI+JV85WjwqWSc0bEVYT2hlZTtuTCI0Y28lci5BXyhaJWlCaEBjYTQwMD1sXFhfMigmT0kwSV9OYVtJSkxHWGBUIjNzVVEoIyU9QjE3JFBzaWdmZm9KUzJJXlFQNmlEc2RhQG8tX25rWUxVWFMwMVk9KT5sNixoMmNJWkdJJm5XWVI0VnJDVHM2W1k2OFdCKFw5Y0YqSTtyOV5CcTBJPDwlYCUiXW81aS5NQjNRbHJMMVJmdSJfVCJVK3FMMl1rIkkrOkIiQS1dJypDSVFoVSJlJDA6P1JMJ09yKWxITzVJUCtJdGhSal4wMF1QaGEiTDU4bSdyQSVJR2svYTQsIUxHTT5aUXEpPVpbNlVRV09xUC0sXCJbKEZyNzVBTT1ZbTIlN2w6bFpJXlhFRidFajNkRWUuMzFHL19HYjQwXmlfQiUjaGhZOUlbLWFPRUNgXUZrMUo6XjpsS0dNRkJUO0BEL0Ihc3AzWVRySyNicVNTSHMoIiwmbmZjRE5vOC0mTTFnRSNFTEUvT29MZm5CIm5bXz5SVDg5RlRmW2leY1IickdqTGk/L2dbLiVobFk9bzBfXSFbODQrb2AnZ2ZJIzIvWyxjSVhiJjN0QEMlb082LU5vXG42ZSErTiFHOiJBaXVGaVwpS1xpPGlYOjlMWiUkM0lrbmdCSXM8bWs5RXJ1IW9RNHJjNnNoRCpCLl1xL0RFWkZoIUUhL0oucVM+KXEkXTFDUyJmSFtHb1JAPFNTWiM1MEdKQjU7NFIoODk0TGdOVEpIKzJxQCMnSDNQNHVBPUhUUWZvIj00K0RZRFY7ZjI6QzVBbSQmWzFqMlw/M1w4YUUtYkY9XmFDW3BEYDNOLi4+VV5xMTNbYHJoXlMqRzYoZGQpbSZPYlIqWy04IkhWPjw/QElXcVZlUF44YkpvWkBWKzJqZDstbituOW1PMm1JXXJxMzFwT1xoUWhHdU9qLlFlSDBtZilhLDM7LiMzW1UsZDcxKCZeKipXbzVJQWZXNWZhbWgxZHNyP01ecUdhWThHbGxcbGwnRFguQyNgbDo4ZyNmLmtIbFwhLm5Eai1RLUBQcUo5ZT9yRjk1JiJMbDYycCRGKDxBTlEwcW5oXkonQiRuU2IqYTpIQX4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMDIgMDAwMDAgbiAKMDAwMDAwMDIwOSAwMDAwMCBuIAowMDAwMDAwMzIxIDAwMDAwIG4gCjAwMDAwMDA2MDAgMDAwMDAgbiAKMDAwMDAwMDgwNCAwMDAwMCBuIAowMDAwMDAwODcyIDAwMDAwIG4gCjAwMDAwMDExNTMgMDAwMDAgbiAKMDAwMDAwMTIxOCAwMDAwMCBuIAowMDAwMDA0OTc4IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDlmOWNjNTE1ZTZhZWE0ODNiYjhmNjQ1YzE0MDFjYjBlPjw5ZjljYzUxNWU2YWVhNDgzYmI4ZjY0NWMxNDAxY2IwZT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gNyAwIFIKL1Jvb3QgNiAwIFIKL1NpemUgMTEKPj4Kc3RhcnR4cmVmCjc5ODUKJSVFT0YK" download="Parth_Rai_Resume.pdf">⬇ Download Resume</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="reveal">
+  <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+  <p class="section-subtitle">A student who learns programming by designing, experimenting and building real projects.</p>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Hi, I'm <strong>Parth Rai</strong>, a 14-year-old student of <strong>Sunbeam School</strong>. I am a student developer interested in Python, artificial intelligence, software development and web technologies.</p>
+      <p>Instead of only learning programming concepts, I like applying them to projects. My work includes voice-assistant concepts, desktop interfaces, AI experiments and websites.</p>
+      <p>I am highly skilled in <strong>AI prompting</strong> and in creating things with AI tools. I use AI to prototype ideas, write and debug code and design interfaces, then turn them into real projects.</p>
+      <p>I enjoy solving technical problems, improving my projects and learning how different technologies can work together to create useful software.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><h3>Python</h3><p>Programming & application development</p></div>
+      <div class="stat"><h3>Web</h3><p>HTML, CSS & JavaScript</p></div>
+      <div class="stat"><h3>AI</h3><p>Prompting & building with AI tools</p></div>
+      <div class="stat"><h3>Builder</h3><p>Learning through projects</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="reveal">
+  <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+  <p class="section-subtitle">Technologies and development areas I have worked with while creating my projects.</p>
+  <div class="skills">
+    <div class="skill">Python</div><div class="skill">HTML</div><div class="skill">CSS</div><div class="skill">JavaScript</div>
+    <div class="skill">Tkinter</div><div class="skill">Git</div><div class="skill">GitHub</div><div class="skill">Voice Assistants</div>
+    <div class="skill">Speech Recognition</div><div class="skill">Text-to-Speech</div><div class="skill">UI Development</div>
+    <div class="skill">Automation</div><div class="skill ai">AI Prompting</div><div class="skill ai">Prompt Engineering</div><div class="skill ai">Building with AI Tools</div><div class="skill ai">AI Concepts</div><div class="skill">Problem Solving</div>
+  </div>
+</section>
+
+<section id="ai" class="reveal">
+  <div class="ai-wrap">
+  <span class="ai-tag">★ MY SPECIALTY</span>
+  <h2 class="section-title">AI <span class="gradient-text">Builder &amp; Prompting</span></h2>
+  <p class="section-subtitle">I use AI as a creative partner: from the first idea to a working project.</p>
+  <div class="ai-grid">
+    <div class="stat"><h3>AI Prompting</h3><p>I write clear, detailed prompts that get useful, accurate results from AI tools.</p></div>
+    <div class="stat"><h3>Building with AI</h3><p>I use AI to plan features, generate and debug code, and improve designs and interfaces.</p></div>
+    <div class="stat"><h3>Idea to Prototype</h3><p>I turn ideas into working apps, assistants and websites quickly, then keep improving them.</p></div>
+  </div>
+  </div>
+</section>
+
+<section id="projects" class="reveal">
+  <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+  <p class="section-subtitle">Some of the software and experimental projects I have worked on.</p>
+  <div class="projects-grid">
+
+    <article class="project">
+      <div class="project-number">PROJECT 01</div>
+      <h3>INFO-JARVIS</h3>
+      <p>A personal AI-assistant project designed around voice interaction and computer automation. The project explores voice commands, application launching, web commands, system information, text-to-speech and assistant-style interfaces.</p>
+      <div class="tech"><span>Python</span><span>Speech Recognition</span><span>TTS</span><span>Automation</span></div>
+      <div class="plinks"><a href="#download">Download →</a></div>
+    </article>
+
+    <article class="project">
+      <div class="project-number">PROJECT 02</div>
+      <h3>Bharat OS</h3>
+      <p>An experimental India-focused desktop environment and operating system interface concept. It explores desktop navigation, application launching, settings, personalization and an integrated software experience.</p>
+      <div class="tech"><span>Python</span><span>Desktop UI</span><span>Application Design</span><span>UI/UX</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-number">PROJECT 03</div>
+      <h3>Gayan AI</h3>
+      <p>An AI learning project focused on understanding how conversational assistants can process user input, recognize intentions and generate useful responses.</p>
+      <div class="tech"><span>Python</span><span>AI</span><span>NLP Concepts</span><span>Machine Learning</span></div>
+    </article>
+
+    <article class="project">
+      <div class="project-number">PROJECT 04</div>
+      <h3>Web Development Projects</h3>
+      <p>Websites and interfaces created while learning frontend development. These projects helped me practice responsive layouts, navigation, styling, JavaScript interactions and modern web design.</p>
+      <div class="tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span></div>
+    </article>
+
+  </div>
+</section>
+
+<section id="journey" class="reveal">
+  <h2 class="section-title">My <span class="gradient-text">Journey</span></h2>
+  <p class="section-subtitle">I am still learning, experimenting and improving with every project.</p>
+  <div class="journey">
+    <div class="journey-item"><h3>Learning Programming</h3><p>I started learning programming fundamentals and using Python to understand variables, conditions, loops, functions and program logic.</p></div>
+    <div class="journey-item"><h3>Building Real Projects</h3><p>I began applying what I learned to larger projects instead of only writing small practice programs.</p></div>
+    <div class="journey-item"><h3>Exploring AI & Assistants</h3><p>Voice assistants and AI inspired me to experiment with speech recognition, text-to-speech, automation and conversational systems.</p></div>
+    <div class="journey-item"><h3>Continuing to Learn</h3><p>My goal is to keep improving my programming knowledge, build better software and learn more about AI and modern software development.</p></div>
+  </div>
+</section>
+
+<section id="download" class="reveal">
+  <h2 class="section-title">Download <span class="gradient-text">INFO-JARVIS</span></h2>
+  <p class="section-subtitle">Install my voice-assistant project on your Windows PC.</p>
+  <div class="dl-box">
+    <div>
+      <h3>INFO-JARVIS for Windows</h3>
+      <p>Installer for Windows. Download, run the setup file and follow the wizard.</p>
+      <div class="buttons">
+        <a class="btn primary" href="INFO-JARVIS-Setup.exe" download>⬇ Download for Windows</a>
+        <a class="btn secondary" href="#manual">How to use it</a>
+      </div>
+    </div>
+    <ul class="dl-meta">
+      <li><b>File:</b> INFO-JARVIS-Setup.exe</li>
+      <li><b>Size:</b> about 54 MB</li>
+      <li><b>Platform:</b> Windows (64-bit PC recommended)</li>
+      <li><b>SHA-256:</b> <span class="hash">15b34ce7f425c00394c86f799312ff2986b3641bbe181fb4ec74c133bd6a92f2</span></li>
+    </ul>
+  </div>
+  <p class="note">Because this is a new, unsigned app, Windows SmartScreen or your antivirus may show a warning. See "Troubleshooting" below. Only download it from this site.</p>
+</section>
+
+<section id="manual" class="reveal">
+  <h2 class="section-title">User <span class="gradient-text">Manual</span></h2>
+  <p class="section-subtitle">How to install and use INFO-JARVIS, step by step.</p>
+
+  <div class="steps">
+    <div class="step"><h4>Download</h4><p>Click the download button and save <code>INFO-JARVIS-Setup.exe</code>.</p></div>
+    <div class="step"><h4>Install</h4><p>Double-click the file, choose Next through the wizard, then Install.</p></div>
+    <div class="step"><h4>Launch</h4><p>Open INFO-JARVIS from the Start menu or the desktop shortcut.</p></div>
+    <div class="step"><h4>Allow microphone</h4><p>If Windows asks for microphone access, choose Allow.</p></div>
+    <div class="step"><h4>Give commands</h4><p>Speak or type a command, for example "open YouTube".</p></div>
+  </div>
+
+  <div class="manual">
+    <h3>Commands you can try</h3>
+    <details open><summary>Open apps and websites</summary>
+      <ul><li><code>Open Notepad</code>, <code>Open Calculator</code></li><li><code>Open YouTube</code>, <code>Open Google</code></li></ul></details>
+    <details><summary>Windows settings</summary>
+      <ul><li><code>Open Wi-Fi settings</code>, <code>Open display settings</code></li></ul></details>
+    <details><summary>System information</summary>
+      <ul><li><code>Tell me the time</code>, <code>System information</code></li></ul></details>
+    <p class="note">These are example commands. Edit this list to match the exact commands your version of INFO-JARVIS understands.</p>
+
+    <h3>Requirements</h3>
+    <details><summary>What you need</summary>
+      <ul><li>A Windows PC (Windows 10 or 11 recommended)</li><li>A working microphone for voice commands</li><li>An internet connection for commands that open websites</li></ul></details>
+
+    <h3>Troubleshooting</h3>
+    <details><summary>Windows says "Windows protected your PC"</summary>
+      <p>This appears for new apps that are not yet code-signed. Click <b>More info</b>, check the file name is INFO-JARVIS-Setup.exe, then click <b>Run anyway</b>.</p></details>
+    <details><summary>My antivirus blocks or deletes the file</summary>
+      <p>Voice and automation apps can be flagged by mistake. Compare the file's SHA-256 with the one shown above (PowerShell: <code>Get-FileHash INFO-JARVIS-Setup.exe</code>). If they match, it is the original file.</p></details>
+    <details><summary>Jarvis cannot hear me</summary>
+      <p>Go to Windows Settings → Privacy → Microphone and allow desktop apps. Check the correct microphone is selected in Sound settings and not muted.</p></details>
+    <details><summary>How do I uninstall it?</summary>
+      <p>Open Windows Settings → Apps → Installed apps, find INFO-JARVIS and choose Uninstall.</p></details>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+  <div class="contact-box">
+    <h2>Interested in my work?</h2>
+    <p>Have a question or want to work together? Send me an email or download my resume. I'm continuing to learn, build and improve my software projects.</p>
+    <div class="buttons">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=parth3806@sunbeamschoolmau.edu.in&su=Hello%20Parth" class="btn primary" target="_blank" rel="noopener">✉ Email Me (Gmail)</a>
+      <button type="button" class="btn secondary" id="copyBtn" style="font:inherit;cursor:pointer;color:inherit">⧉ Copy Email</button>
+      <a href="data:application/pdf;base64,JVBERi0xLjQKJZOMi54gUmVwb3J0TGFiIEdlbmVyYXRlZCBQREYgZG9jdW1lbnQgKG9wZW5zb3VyY2UpCjEgMCBvYmoKPDwKL0YxIDIgMCBSIC9GMiAzIDAgUgo+PgplbmRvYmoKMiAwIG9iago8PAovQmFzZUZvbnQgL0hlbHZldGljYSAvRW5jb2RpbmcgL1dpbkFuc2lFbmNvZGluZyAvTmFtZSAvRjEgL1N1YnR5cGUgL1R5cGUxIC9UeXBlIC9Gb250Cj4+CmVuZG9iagozIDAgb2JqCjw8Ci9CYXNlRm9udCAvSGVsdmV0aWNhLUJvbGQgL0VuY29kaW5nIC9XaW5BbnNpRW5jb2RpbmcgL05hbWUgL0YyIC9TdWJ0eXBlIC9UeXBlMSAvVHlwZSAvRm9udAo+PgplbmRvYmoKNCAwIG9iago8PAovQ29udGVudHMgOSAwIFIgL01lZGlhQm94IFsgMCAwIDU5NS4yNzU2IDg0MS44ODk4IF0gL1BhcmVudCA4IDAgUiAvUmVzb3VyY2VzIDw8Ci9FeHRHU3RhdGUgPDwKL2dSTHMwIDw8Ci9jYSAuMwo+PiAvZ1JMczEgPDwKL2NhIDEKPj4gL2dSTHMyIDw8Ci9jYSAuMgo+Pgo+PiAvRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNSAwIG9iago8PAovQ29udGVudHMgMTAgMCBSIC9NZWRpYUJveCBbIDAgMCA1OTUuMjc1NiA4NDEuODg5OCBdIC9QYXJlbnQgOCAwIFIgL1Jlc291cmNlcyA8PAovRm9udCAxIDAgUiAvUHJvY1NldCBbIC9QREYgL1RleHQgL0ltYWdlQiAvSW1hZ2VDIC9JbWFnZUkgXQo+PiAvUm90YXRlIDAgL1RyYW5zIDw8Cgo+PiAKICAvVHlwZSAvUGFnZQo+PgplbmRvYmoKNiAwIG9iago8PAovUGFnZU1vZGUgL1VzZU5vbmUgL1BhZ2VzIDggMCBSIC9UeXBlIC9DYXRhbG9nCj4+CmVuZG9iago3IDAgb2JqCjw8Ci9BdXRob3IgKFBhcnRoIFJhaSkgL0NyZWF0aW9uRGF0ZSAoRDoyMDI2MTAwNDE0NDYxOSswMCcwMCcpIC9DcmVhdG9yIChcKHVuc3BlY2lmaWVkXCkpIC9LZXl3b3JkcyAoKSAvTW9kRGF0ZSAoRDoyMDI2MTAwNDE0NDYxOSswMCcwMCcpIC9Qcm9kdWNlciAoUmVwb3J0TGFiIFBERiBMaWJyYXJ5IC0gXChvcGVuc291cmNlXCkpIAogIC9TdWJqZWN0IChcKHVuc3BlY2lmaWVkXCkpIC9UaXRsZSAoUGFydGggUmFpIC0gUmVzdW1lKSAvVHJhcHBlZCAvRmFsc2UKPj4KZW5kb2JqCjggMCBvYmoKPDwKL0NvdW50IDIgL0tpZHMgWyA0IDAgUiA1IDAgUiBdIC9UeXBlIC9QYWdlcwo+PgplbmRvYmoKOSAwIG9iago8PAovRmlsdGVyIFsgL0FTQ0lJODVEZWNvZGUgL0ZsYXRlRGVjb2RlIF0gL0xlbmd0aCAzNjY5Cj4+CnN0cmVhbQpHYiFTbj5CY1EtJnE4SDlXMkRmODM+JXRMREQjay5mTGk2KENqQDpyOVs5JUJOM0deLzVVMkBSaE5LJXJlST0+YFAmM2FTLzJLbGFmSG1KcllIJUhibDNkVjVydD4uYD9OSWZaaVVwQ1ZfdVROSSNoJ1gjQGkyZWo1QzhobypKOWBQbC5pXVYicl5wJz09LmkiXWJrKjcvUEJUXjo0WUszMUchREYxJUJEQkBCXidycDZWQD9cUzdOSTFzUilzNWEyISZsYyF0OWxFRWcrRVIvMG1BaVBlT1tWZmZmYEYpW1pSP2c8OkF0WDBLZGsvSDxMTiY1N1xkPW5cKVJnMFZQNSUxUDNMXUBRXVRQIkxDVVJyPzhsSSNiYmkqPzZhQztTSUQvK10kQUVnWnBcQV10PjkmZlQwO2JFbyw9LjhqMHEpbzwnO2hVNmJgWEwhZTVudChYSmwzKmk3anNEQ0tlJEU3JUZgPmw8Ji1wI2w4VGNOYnIqTjE2ZCkzbWMjIWZIam49bz1FPXVRUDNoX2d0LCM0VUYyKzxlKzIhPVV0YlZYMV1pIWJob1A/T0Y6bkIuMTRUWEUybyx1XF1KSE00VypkNHBHZWw4SVI1TmlmWU5VMTUqQDFDWEZbI0FYZ207XFciTlpBPjhxQzBHJDFMbEljTVRga3BEVG1cS0k4cVAxRzw3bjw7NzFJS2JQWj0wOjclKHNlUGciNSs3TkhsVmU3Oj0pLEV0NlM0WEtXRmF0ImM6PUB1Iy9pIzUsK2FKNloiJ0AmITApXEVxKjBKUFxUTiYlSlxiSkR0QnEvYG9RQGhMZUcjVSJGJk5CITErZSM/Z2codV5hPTNbVlJyKltqYUpVcFBvclVMWFh0RXNsY1tlNzpTWVw1VypjIlJWSVw8RFAnaVEpNl1sMS4idHAlYFtjZkNHQU1mZTVgYD1EQCskRVthUyhXIVIzO0xgbXNySShjayRBQChdQjtdUWkpKUg8Xl00bSRQLHVtW007M3E5dExiT2Y8SD1gUVRzJShvPSNORDYtUTRgWTlIPktCb1x1akQkQWtjaTRJQkI1aT40MC0nVltWTTNZbkJoMVFQOHVANTw/JW11RDghMF1jOGdqblZFWHVPL1s9Izg2MWtSc1NVT2QjciVbJCRoZmxlRlQpNFVtKTYnU0knJURXZDFYMmYlRWAsTitVKClxMiIuXHFcL3IhUixZRD4pbXJKRFArW0JPNilXMHQ9Mj5lRDM4QWVfaGpbMituXiROP2czR2FFUS42QS5jdCdoISciTDNRJmpBK2JRTm0wZCtNOiZrZ2ZLKiNVZ25hVysvYEFuLGViWyQ+Zm0nU04wLTpfTFA2PFFRR1RTaHBoMSRhIXI+Q2VPLlEjcVskMzdqYUtqUHRXPyFnKGlvT0drbyRhbW0pR3UjJENyMyZBSEgpQyNGWXBAZ0tKJXEtNUtBOktbWUdFJXBaVGBiLXVIWUtxcmkva2stPW0vJDp0RSxZaWFlKzpbbD5nKT5MZlJUMilaJldMaCVGLj9UQFVcOkBxTkRgPCovQ1FgRiFZKzgkQ0BVLC1ZR2VqMEgvOFxsbEVOakE1b21bVFpoUWdRS0JgLGJgVD08bXRNOzxpKHA1VTtpZ1lSMWRsIkgvNDljYCwuN3BoP3UnRCgrLTZSYjNjIy8oTmROQENmZiRQTl1HOFpnQVdmRzcpcm5CdV1hNVRROideMyNFblM1Rm8oRyJUQmJcbFxZQ1IuSElXKHM4KEtmSCUvOTBBRCU0ZmdLb1IsIlkpZidBVS9aR2tBcyUyZ0BWKHVJMERsWCc1WFZTbmNsc29kLCpiLiQ2OWRmRCxLOFlaOGpndF50TS0yP3IqPFNpZy0hNm1DcUYsbWwlMC9GOSlabnQ4U0dZWig5LFxKTWNpKyNoYEQwXG5kV1I/aGIsV2ZWP2Y5M0FLOkU2QHBcVDo0XykiQEtITVRaKWpQN0VjW3QyQDhkYCRVKGM9WDFUPUVZTEVuX1VuUEIpWCxeQjxBc2dyWTFgLyUtQSs5LE9zLkVgTTNAbVNrZ3QtMUgwVUZJTjIkIzlTQUBJWjVoWjMwWz9cYVpWX0VyOjZyaDcqPGM/U1ZMYj9qaVwxYnBPVWdcKEhiLiUjPVssUlUzT2krP10jZ1whRDNoOTlbYjdBMWpPMWtqKkpNM3EiLUwnUHJGSGchPjJlYG5dP1ZKSC82SUlxWEImWGk6S250dE8kOFI2SCFgVTFcbUBhRjp1PDNGJT1QX3FVQiFrSWMvRk1VW2BpIz1KO2NZcVloXjlDMlpxam9sMXNGTzRGLVxjalZgX3BQQlJWWkhCWUddPWtoWyEtS0U2UykyJiYlQEM/azMyQXBdPG00K3AsYlc+a1o5dUFnWmlYQ1RjbGopalgnZVo4TixeX1ZkcURMPWhqUENEPWtRYitiZy1JYmBxJlRYZCNXcDZpbGVjciQwR2dfIiVsVUM0PzghZTxcL2UydWFta1dsMGMtRXAhV2oyRGhCaiFwbmtHcytYOjlpaGlKNkI6RWNpTmAtL0hcPWFpOXVuSHMvX1IiVEMkdEU0WCFWa00pSixVJE8qRFQtai4wSnBFXzBSaFQySGtcU25PNVkqaTVwaU1AUDVZc05MRVNKZDBgM2JUMyZPKDNcTEpzVD0zWjlxK0hJPk1bXEs4R3VyWi1VKjBVMU4nLkNBY1pNMCpnZkAyYnFXQ3FJVV4hJDZfMlFqNz84QlNXWFhYbWZKNFpYIytjcDsqUG9JSVBjNlxWWTlqUFU9ZSs+PUA8Lj5YXDNFbjF1VVM4UGBlXDIqa2ZAUlVtV1pQT0ckLzRhaSohKE47ckFLTSYvZEViIy46QmAtKVdUZWFkI1w2MldMQVM8RFFpJ1pyRDBdVmUyRUslWDY4ckhWQyo/cGs2Vi07W0lIKWc7bmk8dT9KPnUmWSkzJWhgVkc2XDdVJkQnIzVPJzo0b0ZRKWUiIlZPXFhgcSJoSS5yaCdcO19LW2M7NiFBdEpWWDBRSiZGZ1VUMSFga01oQ1pfKDNcJEhebC5DTmxzLmRiQFYmU3BtX20hWjJbTUJHRVpbKS4xXTBOaThFSUJEKCt1Jy9BRHFDaExZLUkkQjstZVoiUEFwT19VOiYzaWJLOyFXYCNwQVdoXWBLVzNYM0dgXnVDR19CQEI4OiovUmRTNCZcWW80NzF0Imh0aFAxKFA1XCtUQGxuNjwqWkViK0QyNl8xMVJoRlY+bklGXkZJNyJyRT9pT0RPPXJdSDpSPGVVMzwrX1onT2xuLmpgOidoQkVyYTErU05bZDc+LmMlUjc3TDpdIT5Na0RJbWBFI1VEa2lfbmw1S3Q3RStBXitdazZMZE5MdURzJHBYOmczKC5PaT5Zb0w7TlFmMkJrNFtPSDI4ci1TKkhfbj9gWXUuXTJNPEU1aS5MVlpzJHFxMUosTGs3VzBTNC1bZTVDbC8kRjxsdTRnJE1rbz4mOSU0X3VmUWRjPVksMHBvJWZuPmM3aGJhaipDN1EmcVtSU2xxZUFXZGhPYDFyLz8jaVZTWlAqYVk1XD8uYl1YQ2EkLDczXWBeLk5tVVBfJkMwKnFCS1NrPT9ZNlUwXGpYaCIvXWRgVE9pTD4vUnQnRHBmWzVrTlMrJz9MSUY9LFc6RiVBNE5wYVw3Iz5uOlpETCo/JkVAalFpJFcyK2RaIS9tVjciU2Q5dTtSITJzM2BcYDdzN2RdcSxfWyE5XTo3X2MtO3Q6MCplJys2XGNSMEZVVVhXSUZDXilXPGBFUl1UTipUZUNqREROUXNNVE81VScvNmI4RDR0KiJ0TCphIm5lNmdZIyYrcGxGPFI3bl1ZZipgWGU7RWBwclkmVmxeXXRjMS51N0EuZTg+SSk4SD47RFI+L2oiSV5MWVVnLVItKT5nUjssXiNKVk1WI1BsdHJAalxWKyw0MjExPERKMyJzbk9Sbi08QVtdUVlOUmtHbCQkUSFdOmszVy9lSWdEQUwsQkxBS1pjTENgMWwtQGExPWhHYz1AJTF0Nj5gc0cnbzNJQihxTmJWLkUxIVBEQjUpIiUuaTg7KSc3Vk5VVSFSRjRjL2xuLnE7akg6N19PbCReVnU4LEMnMSVLciFKV2o8WiNCZkNDO3Q2UkVXT15RJ0dFJl5QWy9WYkdBbFVvMj5JLnBeJS9SaUV1bC1obGskNVVrImVLZ1VaUGJMLnE5NzAhOFwqbEhrTkMqVnFRKmw7IiwyLiU+RDlOOV0jSypWLmBNQlE0NjFJJ0ErJTk6ZnRSYEhwQk1dKCYtMSpsOjRDck4qMkhaXyNRaj1yKk1lUE0vKj1IUSIscGNmI1U+OCtRRSVdKm5KZkI/XitaNVQ6dU9nWHFBY2RQL0MwMklFImU1RjQoQFxkWVVPQ1FSXVY/OFV0NlgwZCFnVHBkXDBlZ0pfamY0P1MmWDk2IVsvL01ALi5DYTgyUWI0czZtVUAsSEA+Im9xMzRDaFNQaSc0T0olcU8zTS8kWjY1IVRDUXBVYzJ1aXI7MHFoM1Y8WmtJWSRbVmZvW2pRSlRYKT9ySFguQj5uSyMwWVMmVjhNIyR1aSYiNy9jWVt1JDgkNUBWIiJvcSRCRExpaSRjbm44VEEvckViQDVOPlhyZTNDK0UoY2FiPEdaKTJKW2JOVDNFKWFsL19EV0drSztXcClpJk5RP0BtZD8hSlBSPyxsZSwyN1VbcyhPUG84VTNXQycsRlpDLWMqVHEyTEhVIUdBVEVpLSVAcXVETE82VSxFU1cvPS05JidiRmhQbyE/ZUguJyg3VjE0cSlAUFhlX0tlI0UhZ1c0WjNmNmRealxoREhUWk9TYFYqKCVodEQ/XTE5UzwpPk9MZDclSyNWWUVKXFNfSDxmXDQlazxAMWE4fj5lbmRzdHJlYW0KZW5kb2JqCjEwIDAgb2JqCjw8Ci9GaWx0ZXIgWyAvQVNDSUk4NURlY29kZSAvRmxhdGVEZWNvZGUgXSAvTGVuZ3RoIDI5MTUKPj4Kc3RyZWFtCkdiIWwhaC9oUjgmcUE1N2Q4KmohPGhjb09xLm5sVEtVWkQxLFJjQGdHPytQIkowOkVlUyRidHI8OTkxVVFLNkEiSzJdWm5BYV51KyJDIUpOVm4uQDA2YyRQW1dkYDhRISQ+aEJcJWJrNy1IcWNAM1QyWTJfLWhIVnFaU15BQjJUXClAQ2BQX0pQXStAQG1kbz8jXVswMWZ1Lj44I0tzSDBrdV1pX01yNmEuJi47Vj5GP3JVY2ZuS21RMUhhOklhS3AiOSxNXHJYQHFAR24qKTNQZzFQJkZNKiRdJkIqJ1U5ZyptPms7Q1o0aDoyJGwtV1F1L0tUbVNAR2VAKyQucidrWj8zcDYyIjYqN1RSQzVbNmRIX15aJ0NcQVY4Yk4rTlBQMHB1Zi0lXEAwT2BGPjsoKCpaSDI3UWNOTVprWT0yJGMlIlo1Ijs3QmZINytYaG8lbF4jZkRlVTZzQ1JDKiInVkAqR3VVWDB1LFcmbTVXVEVOSEVbOyJaYWpyYE9PMVtmLygxNy5zIl1BOGRwcDotSjcpdVkycURJIVU0PCYzWWtILWQ2T1IxSEFcSE9EO2xJbT4mWWQrMTE8PDUpKCpMOClpZS5ET3FVR0skUjg2YjxMSURIK1xKTS42ZVQsZ2ljbD9gT2RYYGwiZlJcQjYlWDo1bFlGVi1BL0tVR2EtJ2VKNEx0SlNcPVM4Zi5jMHUhMUtNPzhvZUtTOClrdEAhUGdROjA7RFg0Xjk2J3Bvbiw2J1BgaW5UTVw7bkVSJkxXI0c3JXFBXU8ybDg0Py1MZEgrdXNOZichbEUrQWpAcC9PW0o0Yi5XU1pzVUEkWHQjMS9NLywyJ11HaC5TQFlSPllwTmk5ZFgySWdlWEUsTjZbTyY/Xm5xZHVzN1Y9QiZFME5Qc21CYTkyNFE0KkU1IiJZWigkLjEsa3BMZCxpZyJXUTYwZy0vX1grJzwnQ0Q/OChFXy00VzhRaClxWEwzX1VWSVphaCpsQSk9aiowJV1AKEhANkYkXW5GQFAmNWwlZGcxLFJMaWBOQDYrR2FJakt1S0wlbiI+Z2dtTERFLTNzaTgyVUQtai5zSUFrM3VrNUQmV2NuNFRLZS5INUtCUHJhbCckYDlQViFgcC9GJGEwPFY1JmpDLFNdb3I3PyhLQU5mXUVLa2krU1RTdFk+QGxpLEMrREleRzZiRVo1anAzQSsrYzIzLjVfbjRCR0NhIkolNmAqJEhiYCJmR21nLSg2Uz9uK0BeOGZxZ2pYUXE1YD1uNnAjIixgMWFbY2hSQFloUnA4LE8kMTpBYTI7PWRFa0I5WyI/TE0iLD0qW3VJTidxYy0/USNDJj1pITBhaDhRPkdhOkQ/NklqSlZHUkxAPy9pTW9udS5SOy1kUGdzT0JRY3A0UD9KMitVNkF0dSExX08xWllHLjc+NEB1ZlJQcGNmUzNoWzZbWCFqZzNvYk5lT1ovWnRHNCFzYkIwRkk3SyNqY1ZAJ0VrS3RXMFEqcmEhO1p0NUdHQSgiPTlbUFtqLVBKZkApMkpycDJsRmRzMnBMNDVjZ0FVKDVgWTNqKXVPVlwzJ2VMRW9EWlUtTz0zOUNeSE4vYidgdC9FOTpQLzRFbz9ITi1GcG5Fa1xxTzIyOVEpcFVZR3Mxc0dIY0dkVTVxU184XV0xdDZWOlAnRiQsPUpQPykxMzkuOFsuSV1NPmVjblUiblIwOFVpP0NDX21WckYyMmJYNTZXUEAoRWhCWVdTJS47NVIhUkVQQj1RJyJxQCImbmJiRiokIXAvc1FgQjdoQ3Q3Oyg1cGw5PmE6N2lJKUpwKFlEbW5qbkhsQWdYLEFOZjwzMG5na2lHZCxFK0lwI2dQWDtoMF9jNjo4ZVMkUSdXbCtXJEZaP3JNOU1jSkIlXyhLT25Fc2UlOWRqUmxZbTsuJDpoJTx1JnErWF8vWCk3Sy5GZVZbNlpZNkJgTEFfWT5GMmNYWXRHKUtvZ2xrTSxLI11NUDNWRFs8Umt1VUBgO1coVD5HWi4qTVJBSUEyMWVkaGtgTV9FP1dYNjJZJVAsSTcwZnA4N2MvQ2dhVW1pPk45Y1VmYy9WPVVmIktvL2xkPm8tJztGPys4XTEyaUYqUCgoXDVEbk80LXFENUpxWzNMTERMbUhWNU1KWmJSO1YhXCZMQ01kMSc5cjFTSk1MIVprKilcaE8uNTE5ZyMrWVw2TycjPVA8XDcyRElfOiRAdCZaWmNWP0dJbVM3L0BuIU8rPV9haFdLWTltRWhSYTQxPlUoMlxWUltsNS8nOVZpZzFWLk5xPWhYQSlhbHE5ITcoJjk+bjxMLFhgXz9LKztgYC5cVzlPJFMmZlBvX0cnPS1ISU9qdE9EJlJrVG1gazdTKTJQVCYlI3FIa05aJSlRIVUkNShtcUB1XiVFMFttSWVqI1sqQ0pzai09QDJsYWIrN19zJ0pRKlxIP2UrQk4xVWxOWWxINy0zOU9gIU4zNHM0aEUkOVVTayhcJVBVTkY2Y1YtR21wTUhsZURxT1lBPV5kUSpwOT02JT8mQTtwb0RwLVBmInNbNFxTJG8jLS9yLEBTQFtNRj9sUm1zTlJwcm5FWGhtKzxEQ2wkXkhINWNVQTVxNkcqVVYrLy9sJ3ElPnFeTVZTJDFIQmckbyIvRktUI1MsQzAyN1o5UFtyOS9kUEQ/NSw+RVdqa2NJaUlnVlkwVihGO2hIIkJqZ25RNGkhN1s0YDxYTy4rTT8hcjNeXFNiRGY7ajZsXF8wJzclUyI+JV85WjwqWSc0bEVYT2hlZTtuTCI0Y28lci5BXyhaJWlCaEBjYTQwMD1sXFhfMigmT0kwSV9OYVtJSkxHWGBUIjNzVVEoIyU9QjE3JFBzaWdmZm9KUzJJXlFQNmlEc2RhQG8tX25rWUxVWFMwMVk9KT5sNixoMmNJWkdJJm5XWVI0VnJDVHM2W1k2OFdCKFw5Y0YqSTtyOV5CcTBJPDwlYCUiXW81aS5NQjNRbHJMMVJmdSJfVCJVK3FMMl1rIkkrOkIiQS1dJypDSVFoVSJlJDA6P1JMJ09yKWxITzVJUCtJdGhSal4wMF1QaGEiTDU4bSdyQSVJR2svYTQsIUxHTT5aUXEpPVpbNlVRV09xUC0sXCJbKEZyNzVBTT1ZbTIlN2w6bFpJXlhFRidFajNkRWUuMzFHL19HYjQwXmlfQiUjaGhZOUlbLWFPRUNgXUZrMUo6XjpsS0dNRkJUO0BEL0Ihc3AzWVRySyNicVNTSHMoIiwmbmZjRE5vOC0mTTFnRSNFTEUvT29MZm5CIm5bXz5SVDg5RlRmW2leY1IickdqTGk/L2dbLiVobFk9bzBfXSFbODQrb2AnZ2ZJIzIvWyxjSVhiJjN0QEMlb082LU5vXG42ZSErTiFHOiJBaXVGaVwpS1xpPGlYOjlMWiUkM0lrbmdCSXM8bWs5RXJ1IW9RNHJjNnNoRCpCLl1xL0RFWkZoIUUhL0oucVM+KXEkXTFDUyJmSFtHb1JAPFNTWiM1MEdKQjU7NFIoODk0TGdOVEpIKzJxQCMnSDNQNHVBPUhUUWZvIj00K0RZRFY7ZjI6QzVBbSQmWzFqMlw/M1w4YUUtYkY9XmFDW3BEYDNOLi4+VV5xMTNbYHJoXlMqRzYoZGQpbSZPYlIqWy04IkhWPjw/QElXcVZlUF44YkpvWkBWKzJqZDstbituOW1PMm1JXXJxMzFwT1xoUWhHdU9qLlFlSDBtZilhLDM7LiMzW1UsZDcxKCZeKipXbzVJQWZXNWZhbWgxZHNyP01ecUdhWThHbGxcbGwnRFguQyNgbDo4ZyNmLmtIbFwhLm5Eai1RLUBQcUo5ZT9yRjk1JiJMbDYycCRGKDxBTlEwcW5oXkonQiRuU2IqYTpIQX4+ZW5kc3RyZWFtCmVuZG9iagp4cmVmCjAgMTEKMDAwMDAwMDAwMCA2NTUzNSBmIAowMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMDIgMDAwMDAgbiAKMDAwMDAwMDIwOSAwMDAwMCBuIAowMDAwMDAwMzIxIDAwMDAwIG4gCjAwMDAwMDA2MDAgMDAwMDAgbiAKMDAwMDAwMDgwNCAwMDAwMCBuIAowMDAwMDAwODcyIDAwMDAwIG4gCjAwMDAwMDExNTMgMDAwMDAgbiAKMDAwMDAwMTIxOCAwMDAwMCBuIAowMDAwMDA0OTc4IDAwMDAwIG4gCnRyYWlsZXIKPDwKL0lEIApbPDlmOWNjNTE1ZTZhZWE0ODNiYjhmNjQ1YzE0MDFjYjBlPjw5ZjljYzUxNWU2YWVhNDgzYmI4ZjY0NWMxNDAxY2IwZT5dCiUgUmVwb3J0TGFiIGdlbmVyYXRlZCBQREYgZG9jdW1lbnQgLS0gZGlnZXN0IChvcGVuc291cmNlKQoKL0luZm8gNyAwIFIKL1Jvb3QgNiAwIFIKL1NpemUgMTEKPj4Kc3RhcnR4cmVmCjc5ODUKJSVFT0YK" class="btn secondary" download="Parth_Rai_Resume.pdf">⬇ Download Resume</a>
+    </div>
+    <p class="note" id="mailNote">My email: <b>parth3806@sunbeamschoolmau.edu.in</b> &nbsp;|&nbsp; <a href="mailto:parth3806@sunbeamschoolmau.edu.in" style="color:var(--cyan);text-decoration:underline">open in your mail app</a></p>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> Parth Rai • 14-Year-Old Student of Sunbeam School • Designed & Built by Parth Rai</p>
+</footer>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+
+function toggleMenu(){ document.getElementById("menu").classList.toggle("active"); }
+document.querySelectorAll("#menu a").forEach(function(l){
+  l.addEventListener("click", function(){ document.getElementById("menu").classList.remove("active"); });
+});
+
+window.addEventListener("scroll", function(){
+  document.querySelector("nav").style.boxShadow = window.scrollY > 40 ? "0 10px 40px rgba(0,0,0,.25)" : "none";
+});
+
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("show"); io.unobserve(e.target); } });
+}, {threshold: 0.1});
+document.querySelectorAll(".reveal").forEach(function(s){ io.observe(s); });
+
+// Copy email
+document.getElementById("copyBtn").addEventListener("click",function(){
+  var em="parth3806@sunbeamschoolmau.edu.in",b=this;
+  function ok(){b.textContent="\u2713 Copied!";setTimeout(function(){b.textContent="\u29C9 Copy Email";},2000);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(em).then(ok,function(){});}
+  else{var t=document.createElement("textarea");t.value=em;document.body.appendChild(t);t.select();try{document.execCommand("copy");ok();}catch(x){}t.remove();}
+});
+
+// Click effects: ring everywhere + ripple on buttons/cards
+document.addEventListener("click",function(e){
+  var ring=document.createElement("div");ring.className="ring";ring.style.left=e.clientX+"px";ring.style.top=e.clientY+"px";
+  document.body.appendChild(ring);setTimeout(function(){ring.remove();},650);
+  var t=e.target.closest(".btn,.skill,.stat,.project,.step");
+  if(t){var r=t.getBoundingClientRect(),s=Math.max(r.width,r.height)/4,rp=document.createElement("span");
+    rp.className="ripple";rp.style.width=rp.style.height=s+"px";rp.style.left=(e.clientX-r.left-s/2)+"px";rp.style.top=(e.clientY-r.top-s/2)+"px";
+    t.appendChild(rp);setTimeout(function(){rp.remove();},650);}
+});
+</script>
+</body>
+</html>
