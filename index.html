@@ -243,15 +243,16 @@ section{padding:80px 6%}
       <h3>INFO-JARVIS for Windows</h3>
       <p>Installer for Windows. Download, run the setup file and follow the wizard.</p>
       <div class="buttons">
-        <a class="btn primary" href="INFO-JARVIS-Setup.exe" download>⬇ Download for Windows</a>
+        <a class="btn primary" id="jarvisBtn" href="#download">⬇ Download for Windows</a>
         <a class="btn secondary" href="#manual">How to use it</a>
       </div>
+      <p class="note" id="jarvisMsg" style="display:none;color:var(--cyan)">The installer link is being added. Please check back soon!</p>
     </div>
     <ul class="dl-meta">
-      <li><b>File:</b> INFO-JARVIS-Setup.exe</li>
-      <li><b>Size:</b> about 54 MB</li>
-      <li><b>Platform:</b> Windows (64-bit PC recommended)</li>
-      <li><b>SHA-256:</b> <span class="hash">15b34ce7f425c00394c86f799312ff2986b3641bbe181fb4ec74c133bd6a92f2</span></li>
+      <li><b>File:</b> INFO-JARVIS-Setup_1.exe</li>
+      <li><b>Size:</b> about 66 MB</li>
+      <li><b>Platform:</b> Windows 10/11 PC only (not Chromebook or Mac)</li>
+      <li><b>SHA-256:</b> <span class="hash">d2aa8104225885d8f37a86af771479fabbf483ef7a755dea9b40aa92fbe1e8d4</span></li>
     </ul>
   </div>
   <p class="note">Because this is a new, unsigned app, Windows SmartScreen or your antivirus may show a warning. See "Troubleshooting" below. Only download it from this site.</p>
@@ -262,7 +263,7 @@ section{padding:80px 6%}
   <p class="section-subtitle">How to install and use INFO-JARVIS, step by step.</p>
 
   <div class="steps">
-    <div class="step"><h4>Download</h4><p>Click the download button and save <code>INFO-JARVIS-Setup.exe</code>.</p></div>
+    <div class="step"><h4>Download</h4><p>Click the download button and save <code>INFO-JARVIS-Setup_1.exe</code>.</p></div>
     <div class="step"><h4>Install</h4><p>Double-click the file, choose Next through the wizard, then Install.</p></div>
     <div class="step"><h4>Launch</h4><p>Open INFO-JARVIS from the Start menu or the desktop shortcut.</p></div>
     <div class="step"><h4>Allow microphone</h4><p>If Windows asks for microphone access, choose Allow.</p></div>
@@ -285,9 +286,9 @@ section{padding:80px 6%}
 
     <h3>Troubleshooting</h3>
     <details><summary>Windows says "Windows protected your PC"</summary>
-      <p>This appears for new apps that are not yet code-signed. Click <b>More info</b>, check the file name is INFO-JARVIS-Setup.exe, then click <b>Run anyway</b>.</p></details>
+      <p>This appears for new apps that are not yet code-signed. Click <b>More info</b>, check the file name is INFO-JARVIS-Setup_1.exe, then click <b>Run anyway</b>.</p></details>
     <details><summary>My antivirus blocks or deletes the file</summary>
-      <p>Voice and automation apps can be flagged by mistake. Compare the file's SHA-256 with the one shown above (PowerShell: <code>Get-FileHash INFO-JARVIS-Setup.exe</code>). If they match, it is the original file.</p></details>
+      <p>Voice and automation apps can be flagged by mistake. Compare the file's SHA-256 with the one shown above (PowerShell: <code>Get-FileHash INFO-JARVIS-Setup_1.exe</code>). If they match, it is the original file.</p></details>
     <details><summary>Jarvis cannot hear me</summary>
       <p>Go to Windows Settings → Privacy → Microphone and allow desktop apps. Check the correct microphone is selected in Sound settings and not muted.</p></details>
     <details><summary>How do I uninstall it?</summary>
@@ -347,6 +348,43 @@ document.addEventListener("click",function(e){
     rp.className="ripple";rp.style.width=rp.style.height=s+"px";rp.style.left=(e.clientX-r.left-s/2)+"px";rp.style.top=(e.clientY-r.top-s/2)+"px";
     t.appendChild(rp);setTimeout(function(){rp.remove();},650);}
 });
+
+// Resume download: use the viewer's download capability when published, plain link otherwise
+document.querySelectorAll('a[download^="Parth_Rai"]').forEach(function(a){
+  a.addEventListener("click",async function(e){
+    var dl=null;
+    try{ dl=window.claude&&window.claude.use?await window.claude.use("downloads"):null; }catch(x){}
+    if(!dl) return;
+    e.preventDefault();
+    try{
+      var bin=atob(a.href.split(",")[1]),buf=new Uint8Array(bin.length);
+      for(var i=0;i<bin.length;i++)buf[i]=bin.charCodeAt(i);
+      await dl.save({filename:a.getAttribute("download"),data:new Blob([buf],{type:"application/pdf"})});
+    }catch(err){}
+  });
+});
+
+// INFO-JARVIS direct download.
+// Put INFO-JARVIS-Setup_1.exe in the SAME folder as this page, or paste a direct file link in JARVIS_URL.
+var JARVIS_FILE = "INFO-JARVIS-Setup_1.exe";
+var JARVIS_URL = "https://github.com/parthrai60924-hash/Parth-Portfolio/releases/download/b1/INFO-JARVIS-Setup.exe";
+(function(){
+  var b=document.getElementById("jarvisBtn"),m=document.getElementById("jarvisMsg");
+  if(!b)return;
+  // Accepts a GitHub Releases link, or a Google Drive "share" link (converted to a direct download)
+  function toDirect(u){var m=u.match(/drive\.google\.com\/file\/d\/([^\/?#]+)/)||u.match(/drive\.google\.com\/open\?id=([^&]+)/);
+    return m?"https://drive.google.com/uc?export=download&id="+m[1]:u;}
+  function go(u){var a=document.createElement("a");a.href=u;a.download=JARVIS_FILE;document.body.appendChild(a);a.click();a.remove();}
+  b.addEventListener("click",async function(e){
+    e.preventDefault();
+    if(JARVIS_URL){go(toDirect(JARVIS_URL));return;}
+    try{
+      var res=await fetch(JARVIS_FILE,{method:"HEAD"});
+      if(res.ok&&!/text\/html/.test(res.headers.get("content-type")||"")){go(JARVIS_FILE);return;}
+    }catch(x){}
+    m.style.display="block";
+  });
+})();
 </script>
 </body>
 </html>
