@@ -110,6 +110,18 @@ nav ul.active{display:flex}
 section{padding:80px 6%}
 .hero h1{letter-spacing:-2px}
 }
+
+.build-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.build-photo{margin:0;border:1px solid var(--border);border-radius:20px;overflow:hidden;background:var(--card)}
+.build-photo a{display:block}
+.build-photo img{display:block;width:100%;height:260px;object-fit:cover;transition:transform .3s}
+.build-photo a:hover img{transform:scale(1.025)}
+.build-photo figcaption{padding:18px 20px;color:var(--muted);font-size:.95rem}
+.build-photo figcaption strong{display:block;color:var(--text);margin-bottom:5px;font-size:1.05rem}
+.build-photo.portrait img{object-fit:contain;background:#101114}
+@media(max-width:900px){.build-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.build-gallery{grid-template-columns:1fr}.build-photo img{height:240px}}
+@media(prefers-reduced-motion:reduce){.build-photo img{transition:none}.build-photo a:hover img{transform:none}}
 </style>
 </head>
 <body>
@@ -122,6 +134,7 @@ section{padding:80px 6%}
     <li><a href="#skills">Skills</a></li>
     <li><a href="#ai">AI</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#engineering">Engineering</a></li>
     <li><a href="#download">Download</a></li>
     <li><a href="#manual">How to Use</a></li>
     <li><a href="#journey">Journey</a></li>
@@ -134,7 +147,7 @@ section{padding:80px 6%}
   <div class="hero-content">
     <div class="badge">● 14-Year-Old Student of Sunbeam School</div>
     <h1>PARTH <span class="gradient-text">RAI</span></h1>
-    <h2>Python Programmer • <span class="hl">AI &amp; Software Builder</span> • Web Developer</h2>
+    <h2>Engineer in the Making • <span class="hl">Coder &amp; AI Builder</span> • Web Developer</h2>
     <p>I am a 14-year-old student of Sunbeam School who enjoys turning ideas into working software, and I am skilled at AI prompting and building with AI. I build Python applications, AI-assistant projects, web experiences and experimental desktop interfaces while continuously learning new technologies.</p>
     <div class="buttons">
       <a class="btn primary" href="#projects">Explore My Projects</a>
@@ -150,6 +163,7 @@ section{padding:80px 6%}
   <div class="about-grid">
     <div class="about-text">
       <p>Hi, I'm <strong>Parth Rai</strong>, a 14-year-old student of <strong>Sunbeam School</strong>. I am a student developer interested in Python, artificial intelligence, software development and web technologies.</p>
+      <p>I am an <strong>engineer in the making and a coder</strong> who enjoys connecting software with hands-on electronics. I learn by writing code, assembling prototypes and experimenting with how hardware and software work together.</p>
       <p>Instead of only learning programming concepts, I like applying them to projects. My work includes voice-assistant concepts, desktop interfaces, AI experiments and websites.</p>
       <p>I am highly skilled in <strong>AI prompting</strong> and in creating things with AI tools. I use AI to prototype ideas, write and debug code and design interfaces, then turn them into real projects.</p>
       <p>I enjoy solving technical problems, improving my projects and learning how different technologies can work together to create useful software.</p>
@@ -224,6 +238,45 @@ section{padding:80px 6%}
       <div class="tech"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Responsive Design</span></div>
     </article>
 
+  </div>
+</section>
+
+<section id="engineering" class="reveal">
+  <span class="ai-tag">HANDS-ON PROJECTS</span>
+  <h2 class="section-title">Engineer in the Making. <span class="gradient-text">Coder at Heart.</span></h2>
+  <p class="section-subtitle">I enjoy bringing ideas to life through code and electronics. These photos show my hands-on work with a laptop, circuit components and a prototype display as I explore the connection between software and hardware.</p>
+  <div class="skills" style="margin-bottom:30px">
+    <div class="skill">Coding</div><div class="skill">Electronics Prototyping</div><div class="skill">Hardware &amp; Software</div><div class="skill">Creative Problem Solving</div>
+  </div>
+  <div class="build-gallery">
+    <figure class="build-photo">
+      <a href="images/building-01.jpg" target="_blank" rel="noopener" aria-label="View photo: Electronics in Action"><img src="images/building-01.jpg" alt="Electronics prototype with wiring, breadboards and an LCD display" loading="lazy" decoding="async"></a>
+      <figcaption><strong>Electronics in Action</strong>A close-up of my wired electronics prototype and display.</figcaption>
+    </figure>
+    <figure class="build-photo">
+      <a href="images/building-02.jpg" target="_blank" rel="noopener" aria-label="View photo: Code Meets Hardware"><img src="images/building-02.jpg" alt="Parth working on a laptop beside an electronics prototype" loading="lazy" decoding="async"></a>
+      <figcaption><strong>Code Meets Hardware</strong>Working at the laptop alongside the electronics setup.</figcaption>
+    </figure>
+    <figure class="build-photo portrait">
+      <a href="images/building-03.jpg" target="_blank" rel="noopener" aria-label="View photo: Prototype Details"><img src="images/building-03.jpg" alt="Vertical view of an electronics prototype on a workbench" loading="lazy" decoding="async"></a>
+      <figcaption><strong>Prototype Details</strong>Another view of the circuit connections and components.</figcaption>
+    </figure>
+    <figure class="build-photo">
+      <a href="images/building-04.jpg" target="_blank" rel="noopener" aria-label="View photo: Building and Learning"><img src="images/building-04.jpg" alt="Parth coding at a laptop with hardware on the desk" loading="lazy" decoding="async"></a>
+      <figcaption><strong>Building and Learning</strong>Hands-on work brings my coding and engineering interests together.</figcaption>
+    </figure>
+    <figure class="build-photo">
+      <a href="images/building-05.jpg" target="_blank" rel="noopener" aria-label="View photo: Connected Components"><img src="images/building-05.jpg" alt="Close-up of connected electronics components and a display" loading="lazy" decoding="async"></a>
+      <figcaption><strong>Connected Components</strong>Exploring how individual parts form a working setup.</figcaption>
+    </figure>
+    <figure class="build-photo">
+      <a href="images/building-06.jpg" target="_blank" rel="noopener" aria-label="View photo: Focused on the Code"><img src="images/building-06.jpg" alt="Parth concentrating on work at a laptop" loading="lazy" decoding="async"></a>
+      <figcaption><strong>Focused on the Code</strong>Practising programming as part of my building process.</figcaption>
+    </figure>
+    <figure class="build-photo">
+      <a href="images/building-07.jpg" target="_blank" rel="noopener" aria-label="View photo: My Creative Workspace"><img src="images/building-07.jpg" alt="Parth at a workbench with a laptop and electronics" loading="lazy" decoding="async"></a>
+      <figcaption><strong>My Creative Workspace</strong>Learning, experimenting and developing ideas at the workbench.</figcaption>
+    </figure>
   </div>
 </section>
 
